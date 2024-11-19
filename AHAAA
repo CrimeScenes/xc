@@ -1,19 +1,3 @@
-local RunService = game:GetService("RunService")
-local function clearConsole()
-    local DevConsole = game:GetService("CoreGui"):WaitForChild("DevConsoleMaster")
-    local DevWindow = DevConsole:WaitForChild("DevConsoleWindow")
-    local DevUI = DevWindow:WaitForChild("DevConsoleUI")
-    local MainView = DevUI:WaitForChild("MainView")
-    local ClientLog = MainView:WaitForChild("ClientLog")
-    for _, v in pairs(ClientLog:GetChildren()) do
-        if v:IsA("GuiObject") and v.Name:match("%d+") then
-            v:Destroy()
-        end
-    end
-end
-RunService.Heartbeat:Connect(function()
-    clearConsole()
-end)
 
 
 
